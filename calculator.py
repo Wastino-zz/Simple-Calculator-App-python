@@ -1,67 +1,79 @@
-def Welcome():
-    print("Welcome Genius!!")
-def End():
-    print("Thank you for using Genius calculator. See you next time")
-    
+def main():
+    welcome()
+    arithmetic_operations()
+    run_again()
+    end()
 
-def Arithemetic_operations():
-    Operation = input('''
+
+def welcome():
+    print("Welcome Genius!!")
+
+
+def arithmetic_operations():
+    operation = input('''
     What math problem would you want to solve today?
-    "+" is for Addition
-    "-" is for Subtraction
-    "/" is for division
-    "%" is for modulus
-    "*" is for multiplication
-    "**" if for power
-    "0" to calcel operation
+    1 is for Addition
+    2 is for Subtraction
+    3 is for Division
+    4 is for Modulus
+    5 is for Multiplication
+    6 if for Power
+    0 to cancel operation
     ''')
 
-    Num_1 = float(input('Please enter first number: '))
-    Num_2 = float(input('Please enter second number: '))
+    if operation != "0":
+      num_1 = float(input('Please enter first number: '))
+      num_2 = float(input('Please enter second number: '))
 
-    if Operation == '+':
-        print('{} + {} =' . format(Num_1, Num_2))
-        print(Num_1 + Num_2)
+      if operation == '1':
+        print('{} + {} ='.format(num_1, num_2))
+        print(num_1 + num_2)
 
-    elif Operation == '-':
-        print('{} - {} =' . format(Num_1, Num_2))
-        print(Num_1 - Num_2)
+      elif operation == '2':
+        print('{} - {} ='.format(num_1, num_2))
+        print(num_1 - num_2)
 
-    elif Operation == '/':
-        print('{} / {} =' . format(Num_1, Num_2))
-        print(Num_1 / Num_2)
+      elif operation == '3':
+        print('{} / {} ='.format(num_1, num_2))
+        print(num_1 / num_2)
 
-    elif Operation == '%':
-        print('{} % {} =' . format(Num_1, Num_2))
-        print(Num_1 % Num_2)
+      elif operation == '4':
+        print('{} % {} ='.format(num_1, num_2))
+        print(num_1 % num_2)
 
-    elif Operation == '*':
-        print('{} * {} =' . format(Num_1, Num_2))
-        print(Num_1 * Num_2)
-    elif Operation == '**':
-        print('{} ** {} =' . format(Num_1, Num_2))
-        print(Num_1 ** Num_2)
-    elif Operation == "":
-        End()
-    else:
+      elif operation == '5':
+        print('{} * {} ='.format(num_1, num_2))
+        print(num_1 * num_2)
+
+      elif operation == '6':
+        print('{} ** {} ='.format(num_1, num_2))
+        print(num_1 ** num_2)
+
+      else:
         print("You have entered an incorrect option. Please run again")
+    else:
+      end()
 
-def runAgain():
-    Calc_again = input('''
+
+def end():
+    print("Thank you for using Genius calculator. See you next time")
+
+
+def run_again():
+    calc_again = input('''
     Do you want to calculate again?
     y for Yes
     n for No
     ''')
-    if Calc_again.upper() == 'Y':
-        Arithemetic_operations()
-    elif Calc_again.upper() == 'N':
-        End()
-        
-    else:
-        runAgain()
 
+    while calc_again.upper() == 'Y':
+      arithmetic_operations()
+      run_again()
+      
+      if calc_again.upper() == 'N':
+        end()
+      break
+    
 
-Welcome()
-Arithemetic_operations()
-runAgain()
-End()
+if __name__ == "__main__":
+    main()
