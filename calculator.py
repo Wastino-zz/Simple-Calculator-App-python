@@ -1,9 +1,13 @@
+def main():
+    Welcome()
+    Arithemetic_operations()
+    runAgain()
+    End()
+    
+    
 def Welcome():
     print("Welcome Genius!!")
-def End():
-    print("Thank you for using Genius calculator. See you next time")
-    
-
+ 
 def Arithemetic_operations():
     Operation = input('''
     What math problem would you want to solve today?
@@ -13,7 +17,7 @@ def Arithemetic_operations():
     "%" is for modulus
     "*" is for multiplication
     "**" if for power
-    "0" to calcel operation
+    "0" to cancel operation
     ''')
 
     Num_1 = float(input('Please enter first number: '))
@@ -46,6 +50,10 @@ def Arithemetic_operations():
     else:
         print("You have entered an incorrect option. Please run again")
 
+      
+def End():
+    print("Thank you for using Genius calculator. See you next time")
+    
 def runAgain():
     Calc_again = input('''
     Do you want to calculate again?
@@ -59,9 +67,15 @@ def runAgain():
         
     else:
         runAgain()
+    
+ 
+    
+if __name__=="__main__":
+    main()
+    
 
 
-Welcome()
-Arithemetic_operations()
-runAgain()
-End()
+
+
+
+
